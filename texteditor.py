@@ -221,8 +221,6 @@ def new_emty(e = False):
     detail_widget.config(state = DISABLED)
     tx = text_widget.get("1.0",END)
     fob = ''
-def new_file(e = False):
-    os.startfile(os.path.abspath(__file__))
 
 
 # edit menu
@@ -306,8 +304,6 @@ file_menu.add_command(label="Save",accelerator='Ctrl-S', command=save_file)
 file_menu.add_command(label="Save as",accelerator='Ctrl-Alt-S', command=save_as_file)
 file_menu.add_separator()
 file_menu.add_command(label="New File",accelerator='Ctrl-N', command=new_emty)
-file_menu.add_command(label="New Window",accelerator='Ctrl-Alt-N', command=new_file)
-file_menu.add_command(label="Close", accelerator='Alt-F4', command=close_file)
 
 edit_menu.add_command(label="Cut",accelerator='Ctrl-X', command=lambda: cut_text(False))
 edit_menu.add_command(label="Copy",accelerator='Ctrl-C', command=lambda: copy_text(False))
@@ -379,7 +375,7 @@ zoom_out_btn.pack(side=RIGHT)
 
 #bindings
 root.bind('<Control-Key-n>', new_emty)
-root.bind('<Control-Alt-n>', new_file)
+root.bind('<Control-Alt-n>', new_emty)
 root.bind('<Control-Key-o>', open_file)
 root.bind('<Control-Key-s>', save_file)
 root.bind('<Control-Alt-s>', save_as_file)
@@ -424,7 +420,6 @@ def newline_add(event):
     if ':'in po_duble :
         text_widget.insert(INSERT, " " * 4)
 def tab_add(arg):
-    print("tab pressed")
     text_widget.insert(INSERT, "    ")
     return 'break'
 def tab_del(e = False):
