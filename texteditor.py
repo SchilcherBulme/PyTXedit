@@ -15,7 +15,7 @@ root = ThemedTk()
 root.geometry("860x460")
 root.title("PyTXedit")
 root.resizable(True, True)
-
+root.iconbitmap(r"dat/code.ico")
 
 
 cdg = ic.ColorDelegator()
